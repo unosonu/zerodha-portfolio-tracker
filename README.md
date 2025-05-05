@@ -22,4 +22,4 @@ streamlit run app.py
 ```
 
 ## License
-![License](https://img.shields.io/badge/license-GPL%20v3-blue
+![License](https://img.shields.io/badge/license-GPL%20v3-blue)
