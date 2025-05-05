@@ -19,6 +19,7 @@ A Streamlit app to visualize stock returns from buy date, based on Zerodha-style
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
 
 ## License
 ![License](https://img.shields.io/badge/license-GPL%20v3-blue
