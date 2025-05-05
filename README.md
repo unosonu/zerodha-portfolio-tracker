@@ -21,5 +21,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## Screenshot
+
+![Screenshot](path/to/your/screenshot.png)
+
+
 ## License
 ![License](https://img.shields.io/badge/license-GPL%20v3-blue)
