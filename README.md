@@ -23,7 +23,8 @@ streamlit run app.py
 
 ## Screenshot
 
-![Screenshot](path/to/your/screenshot.png)
+![Screenshot](screenshot1.png)
+![Screenshot](screenshot2.png)
 
 
 ## License
