@@ -21,7 +21,9 @@ st.title("📈 Stock Returns from Buy Date")
 
 # --- VISIT COUNTER ---
 # COUNTER_URL = "https://api.npoint.io/3d12053ea7002f9f1482"  # json endpoint 
-COUNTER_URL = "https://api.npoint.io/c9fb396401861929d8e7" # json endpoint
+# COUNTER_URL = "https://api.npoint.io/c9fb396401861929d8e7" # json endpoint
+
+COUNTER_URL = st.secrets["COUNTER_URL"]
 
 # """
 # def get_and_increment_visits():
