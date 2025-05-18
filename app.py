@@ -20,8 +20,9 @@ st.set_page_config(
 st.title("📈 Stock Returns from Buy Date")
 
 # --- VISIT COUNTER ---
-COUNTER_URL = "https://api.npoint.io/3d12053ea7002f9f1482"  # json endpoint 
-
+# COUNTER_URL = "https://api.npoint.io/3d12053ea7002f9f1482"  # json endpoint 
+COUNTER_URL = "https://api.npoint.io/3abd93ca01105b34be4c" # json endpoint
+"""
 def get_and_increment_visits():
     try:
         response = requests.get(COUNTER_URL)
@@ -31,8 +32,30 @@ def get_and_increment_visits():
         return visits
     except Exception:
         return None
+"""
 
-visits = get_and_increment_visits()
+def get_and_update_counters(update_upload=False):
+    try:
+        response = requests.get(COUNTER_URL)
+        data = response.json()
+
+        visits = data.get("visits", 0) + 1
+        uploads = data.get("uploads", 0)
+
+        if update_upload:
+            uploads += 1
+
+        # Update both, even if only one changed
+        requests.post(COUNTER_URL, json={"visits": visits, "uploads": uploads})
+
+        return visits
+    except Exception:
+        return None
+
+
+# visits = get_and_increment_visits()
+visits = get_and_update_counters()  # Only update visit counter here
+
 if visits is not None:
     st.markdown(f"🧮 **Total visits so far:** {visits}")
     st.sidebar.markdown(f"👀 Total Visits: **{visits}**")
@@ -124,6 +147,8 @@ if uploaded_file is not None:
             yaxis_title="Returns (%)",  # Y-axis is Returns in percentage
             showlegend=True
         )
+        
+        get_and_update_counters(update_upload=True) #increment upload counter
 
         st.plotly_chart(fig, use_container_width=True)
 
