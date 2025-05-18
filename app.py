@@ -22,17 +22,18 @@ st.title("📈 Stock Returns from Buy Date")
 # --- VISIT COUNTER ---
 # COUNTER_URL = "https://api.npoint.io/3d12053ea7002f9f1482"  # json endpoint 
 COUNTER_URL = "https://api.npoint.io/3abd93ca01105b34be4c" # json endpoint
-"""
-def get_and_increment_visits():
-    try:
-        response = requests.get(COUNTER_URL)
-        data = response.json()
-        visits = data.get("visits", 0) + 1
-        requests.post(COUNTER_URL, json={"visits": visits})
-        return visits
-    except Exception:
-        return None
-"""
+
+# """
+# def get_and_increment_visits():
+#     try:
+#         response = requests.get(COUNTER_URL)
+#         data = response.json()
+#         visits = data.get("visits", 0) + 1
+#         requests.post(COUNTER_URL, json={"visits": visits})
+#         return visits
+#     except Exception:
+#         return None
+# """
 
 def get_and_update_counters(update_upload=False):
     try:
